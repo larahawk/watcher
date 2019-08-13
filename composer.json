@@ -1,0 +1,41 @@
+{
+    "name": "larahawk/watcher",
+    "description": "Listen for Laravel exceptions and log events then report them back to a Larahawk account",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrew Schmelyun",
+            "email": "hello@larahawk.com",
+            "homepage": "https://larahawk.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.3",
+        "orchestra/testbench": "^3.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Larahawk\\Watcher\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Larahawk\\Watcher\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Larahawk\\Watcher\\LarahawkServiceProvider"
+            ]
+        }
+    }
+}
