@@ -38,7 +38,6 @@ class SendLogTest extends TestCase
             'fullUrl' => 'http://localhost',
             'ip' => '127.0.0.1',
             'method' => 'GET',
-            'userAgent' => 'Symfony',
             'userId' => 0,
             'file' => null,
             'line' => null,
@@ -47,6 +46,8 @@ class SendLogTest extends TestCase
 
         $sendLog = new SendLog(new MessageLogged('alert',  'This is an alert test!'), app()->request);
         $actual = $sendLog->dispatch();
+
+        unset($actual['userAgent']);
 
         $this->assertEquals($expected, $actual);
     }
