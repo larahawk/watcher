@@ -10,7 +10,6 @@ class Larahawk
 
     public static function sendLogEvent($log, $request)
     {
-        // todo: check for exception index being set
         $payload = array(
             'level' => $log->level,
             'message' => $log->message,
