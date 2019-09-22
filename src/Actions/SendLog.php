@@ -44,7 +44,7 @@ class SendLog
         }
 
         $client = new Client([
-            'base_uri' => 'https://larahawk.com',
+            'base_uri' => 'https://app.larahawk.com',
             'defaults' => [
                 'exceptions' => false
             ]
